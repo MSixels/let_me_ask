@@ -1,4 +1,5 @@
 import { fastify } from 'fastify'
+import { sql } from './db/connection.ts'
 import { serializerCompiler, validatorCompiler, type ZodTypeProvider } from 'fastify-type-provider-zod'
 import { fastifyCors } from '@fastify/cors'
 import { env } from './env.ts'
@@ -17,7 +18,6 @@ app.get ('/health', () => {
 })
 
 app.listen({ port: env.PORT }).then(() => {
-  console.log(`Port: ${process.env.PORT }`)
-  console.log('HTTP server is running!!!')
+
 })
 
